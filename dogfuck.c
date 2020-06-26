@@ -2,7 +2,7 @@
  * dogfuck.c - plays an animation of a couple of dogs fucking
  * gratuitously ripped off of the following resources:
  * -- just took what worked w/o compiling full of crap in 2020
- *    from here
+ *	from here
  * https://grox.net/software/mine/slowcat/ 
  * -- and all so I could play stuff found in this
  * http://artscene.textfiles.com/vt100/
@@ -36,22 +36,22 @@ int main() {
 	int c;
 	FILE *fp;
 	char *fnam;
-    struct timespec ts;
+	struct timespec ts;
 
-    // set timespec struct values for nanosleep function
+	// set timespec struct values for nanosleep function
 	ts.tv_sec=0;
 	ts.tv_nsec=1000000L;
 
-    // open up ancient dog fucking file
-    fnam = "dogs.vt";
+	// open up ancient dog fucking file
+	fnam = "dogs.vt";
 	fp = fopen(fnam,"r");
-    // missing file! what did you do wrong?
+	// missing file! what did you do wrong?
 	if(fp == NULL) {
 		puts("u dun fucked up");
 		exit(2);
 	}
 
-    // Dead simple shit right out of the first chapter of k&r
+	// Dead simple shit right out of the first chapter of k&r
 	while( (c = fgetc(fp)) != EOF) {
 		putchar(c);
 		nanosleep(&ts,NULL);
